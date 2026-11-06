@@ -1,1 +1,397 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="4PM — 4 Privileged Men. Discover premium menswear, streetwear and timeless essentials.">
+  <meta name="theme-color" content="#101010">
+
+  <title>4PM | 4 Privileged Men</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: "#C9A45C",
+            ink: "#101010",
+            charcoal: "#191919",
+            cream: "#F5F3EE"
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-white text-ink font-sans">
+
+  <!-- Announcement Bar -->
+  <div class="bg-ink text-white text-center py-2 px-4 text-xs tracking-widest">
+    COMPLIMENTARY SHIPPING ON SELECT ORDERS
+    <span class="text-gold"> | 4PM PRIVILEGE</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-white border-b border-gray-100">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+
+      <button id="menuBtn" class="lg:hidden text-xl" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <a href="#" class="brand-logo text-3xl font-extrabold tracking-tighter">
+        4PM<span class="text-gold">.</span>
+        <span class="block text-[9px] tracking-[0.35em] font-semibold">
+          4 PRIVILEGED MEN
+        </span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-9 text-sm font-semibold">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#shop" class="nav-link">Shop</a>
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#about" class="nav-link">Our Story</a>
+      </div>
+
+      <div class="flex items-center gap-5 text-lg">
+        <button id="searchBtn" aria-label="Search products">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button id="wishlistBtn" aria-label="Wishlist" class="relative">
+          <i class="fa-regular fa-heart"></i>
+          <span id="wishlistCount" class="count-badge">0</span>
+        </button>
+
+        <button id="cartBtn" aria-label="Shopping cart" class="relative">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartCount" class="count-badge">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Search -->
+    <div id="searchPanel" class="hidden border-t px-5 py-4 bg-white">
+      <div class="max-w-3xl mx-auto flex gap-3">
+        <input id="searchInput" type="search"
+          placeholder="Search clothing, shoes, accessories..."
+          class="flex-1 border-b border-gray-300 py-3 outline-none focus:border-gold">
+        <button id="closeSearch" aria-label="Close search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t px-6 py-5">
+      <div class="flex flex-col gap-5 text-sm font-semibold">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Our Story</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="home" class="hero-section relative overflow-hidden">
+      <div class="hero-overlay"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-28 lg:py-44">
+        <p class="text-gold uppercase tracking-[0.4em] text-xs mb-6">
+          The privileged collection
+        </p>
+
+        <h1 class="text-white text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-tight max-w-3xl">
+          STYLE IS A
+          <span class="text-gold">STATEMENT.</span>
+        </h1>
+
+        <p class="text-gray-300 mt-7 max-w-lg leading-7">
+          Designed for men who understand that distinction is never accidental.
+          Discover a new standard of everyday luxury.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="#shop" class="gold-button">
+            SHOP COLLECTION <i class="fa-solid fa-arrow-right ml-3"></i>
+          </a>
+          <a href="#about" class="outline-button">
+            DISCOVER 4PM
+          </a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 right-8 text-white/60 text-xs tracking-widest">
+        EST. 4PM — DIFFERENT BY DESIGN
+      </div>
+    </section>
+
+    <!-- Brand Highlights -->
+    <section class="border-b border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 py-9 grid grid-cols-2 md:grid-cols-4 gap-7 text-center">
+        <div>
+          <i class="fa-solid fa-shirt text-gold text-xl"></i>
+          <p class="font-bold text-sm mt-3">Premium Quality</p>
+          <p class="text-gray-500 text-xs mt-1">Made to stand out</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-truck-fast text-gold text-xl"></i>
+          <p class="font-bold text-sm mt-3">Reliable Delivery</p>
+          <p class="text-gray-500 text-xs mt-1">Convenient shopping</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-shield-halved text-gold text-xl"></i>
+          <p class="font-bold text-sm mt-3">Secure Shopping</p>
+          <p class="text-gray-500 text-xs mt-1">Shop with confidence</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-star text-gold text-xl"></i>
+          <p class="font-bold text-sm mt-3">Distinctive Style</p>
+          <p class="text-gray-500 text-xs mt-1">The 4PM identity</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections -->
+    <section id="collections" class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div class="flex justify-between items-end mb-10">
+        <div>
+          <p class="section-label">CURATED FOR YOU</p>
+          <h2 class="section-title">Explore Collections</h2>
+        </div>
+        <a href="#shop" class="hidden sm:block text-sm font-bold underline underline-offset-4">
+          VIEW ALL
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+        <button class="collection-card" data-category="Clothing">
+          <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=900"
+            alt="Men's premium fashion">
+          <span>THE ESSENTIALS</span>
+        </button>
+
+        <button class="collection-card" data-category="Shoes">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900"
+            alt="Premium sneakers">
+          <span>FOOTWEAR</span>
+        </button>
+
+        <button class="collection-card" data-category="Accessories">
+          <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=900"
+            alt="Luxury accessories">
+          <span>ACCESSORIES</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="bg-cream py-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+          <p class="section-label">THE 4PM EDIT</p>
+          <h2 class="section-title">Shop The Collection</h2>
+          <p class="text-gray-500 text-sm mt-3">
+            Discover pieces that define your individuality.
+          </p>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <button class="filter-btn active" data-filter="All">All Products</button>
+          <button class="filter-btn" data-filter="Clothing">Clothing</button>
+          <button class="filter-btn" data-filter="Shoes">Shoes</button>
+          <button class="filter-btn" data-filter="Accessories">Accessories</button>
+        </div>
+
+        <div class="flex justify-between items-center mb-6">
+          <p id="productTotal" class="text-sm text-gray-500">Showing products</p>
+
+          <select id="sortProducts" class="bg-transparent border border-gray-300 px-3 py-2 text-sm outline-none">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+          </select>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-7">
+        </div>
+
+        <div id="emptyState" class="hidden text-center py-16">
+          <i class="fa-solid fa-box-open text-3xl text-gray-400"></i>
+          <p class="mt-4 font-bold">No products found.</p>
+          <p class="text-sm text-gray-500 mt-2">Try another search or category.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section id="about" class="bg-ink text-white">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2">
+        <div class="min-h-[350px]">
+          <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200"
+            alt="4PM fashion editorial"
+            class="w-full h-full object-cover">
+        </div>
+
+        <div class="px-8 lg:px-20 py-16 lg:py-24 flex flex-col justify-center">
+          <p class="section-label">THE PHILOSOPHY</p>
+          <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight mt-5">
+            NOT JUST A LABEL.
+            <span class="text-gold">A STANDARD.</span>
+          </h2>
+
+          <p class="text-gray-400 leading-8 mt-7">
+            4 Privileged Men represents individuality, confidence and
+            intentional style. We believe fashion is more than what you wear.
+            It is how you present yourself to the world.
+          </p>
+
+          <a href="#shop" class="gold-button mt-9 self-start">
+            EXPLORE 4PM
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 px-6 text-center">
+      <p class="section-label">JOIN THE PRIVILEGED LIST</p>
+      <h2 class="section-title mt-3">Stay In The Loop.</h2>
+      <p class="text-gray-500 text-sm mt-3">
+        Be the first to discover new collections and exclusive releases.
+      </p>
+
+      <form id="newsletterForm" class="max-w-lg mx-auto flex mt-8 border border-gray-300">
+        <input type="email" required placeholder="Enter your email address"
+          class="flex-1 min-w-0 px-4 py-4 outline-none text-sm">
+        <button class="bg-ink text-white px-6 text-xs font-bold tracking-widest hover:bg-gold hover:text-ink">
+          JOIN
+        </button>
+      </form>
+
+      <p id="newsletterMessage" class="text-sm mt-4" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+      <div>
+        <h2 class="text-4xl font-extrabold tracking-tighter">
+          4PM<span class="text-gold">.</span>
+        </h2>
+        <p class="text-xs tracking-[0.3em] mt-1">4 PRIVILEGED MEN</p>
+        <p class="text-gray-400 text-sm leading-7 mt-6 max-w-xs">
+          Different wears. Distinctive identity. A standard of our own.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-6">EXPLORE</h3>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#collections">Collections</a>
+          <a href="#about">Our Story</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-6">CUSTOMER CARE</h3>
+        <div class="footer-links">
+          <a href="#">Contact Us</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Returns & Exchanges</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold mb-6">FOLLOW 4PM</h3>
+        <div class="flex gap-5 text-xl">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-16 pt-7 border-t border-white/10 text-center text-xs text-gray-500">
+      © <span id="year"></span> 4PM — 4 PRIVILEGED MEN. ALL RIGHTS RESERVED.
+    </div>
+  </footer>
+
+  <!-- Cart Overlay -->
+  <div id="cartOverlay" class="fixed inset-0 bg-black/50 z-50 hidden">
+    <aside id="cartDrawer" class="absolute right-0 top-0 h-full w-full max-w-md bg-white flex flex-col">
+
+      <div class="flex items-center justify-between p-6 border-b">
+        <h2 class="text-xl font-extrabold">YOUR BAG</h2>
+        <button id="closeCart" aria-label="Close cart" class="text-2xl">&times;</button>
+      </div>
+
+      <div id="cartItems" class="flex-1 overflow-y-auto p-6"></div>
+
+      <div class="border-t p-6">
+        <div class="flex justify-between font-bold text-lg">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₦0</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-2">Shipping and taxes calculated at checkout.</p>
+        <button id="checkoutBtn" class="gold-button w-full mt-6 text-center">
+          PROCEED TO CHECKOUT
+        </button>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- Product Quick View -->
+  <div id="quickView" class="fixed inset-0 bg-black/70 z-[60] hidden items-center justify-center p-4">
+    <div class="bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+      <button id="closeQuickView" aria-label="Close product details"
+        class="absolute top-4 right-4 z-10 text-2xl">&times;</button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
